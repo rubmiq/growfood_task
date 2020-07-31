@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 31 2020 г., 01:18
+-- Время создания: Июл 31 2020 г., 01:23
 -- Версия сервера: 5.7.24
 -- Версия PHP: 7.2.14
 
@@ -36,17 +36,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `clients_phone_unique` (`phone`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Дамп данных таблицы `clients`
---
-
-INSERT INTO `clients` (`id`, `name`, `phone`, `address`) VALUES
-(1, 'asdasdasd', 'asdasdas', 'dasddasdasd'),
-(2, 'adsdas', 'asd', 'asd'),
-(3, 'sadasdasd', 'asdasdasdasd', 'asdasdasdasdas'),
-(4, 'зжцжзцзж', 'цзжцзж', 'цзжцзж');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -86,16 +76,6 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Дамп данных таблицы `orders`
---
-
-INSERT INTO `orders` (`id`, `client_id`, `tariff_id`, `start`) VALUES
-(1, 1, 2, '2020-07-25'),
-(2, 2, 2, '2020-07-22'),
-(3, 3, 2, '2020-07-10'),
-(4, 4, 2, '2020-07-16');
-
 -- --------------------------------------------------------
 
 --
@@ -117,8 +97,8 @@ CREATE TABLE IF NOT EXISTS `tariffs` (
 
 INSERT INTO `tariffs` (`id`, `name`, `price`, `weekdays`) VALUES
 (1, 'test1', 5000, '[\"on\",\"on\",\"on\",\"on\",\"on\",\"on\",\"on\"]'),
-(2, 'test1', 4200, '[\"on\",\"on\",\"off\",\"on\",\"on\",\"on\",\"on\"]'),
-(3, 'test1', 3000, '[\"on\",\"on\",\"off\",\"on\",\"on\",\"off\",\"on\"]');
+(2, 'test2', 4200, '[\"on\",\"on\",\"off\",\"on\",\"on\",\"on\",\"on\"]'),
+(3, 'test3', 3000, '[\"on\",\"on\",\"off\",\"on\",\"on\",\"off\",\"on\"]');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
